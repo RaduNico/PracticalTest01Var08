@@ -45,7 +45,7 @@ public class PlayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         theRiddle.setText(intent.getStringExtra("riddle"));
-        String theAnswer = intent.getStringExtra("answer");
+        theAnswer = intent.getStringExtra("answer");
     }
 
 }

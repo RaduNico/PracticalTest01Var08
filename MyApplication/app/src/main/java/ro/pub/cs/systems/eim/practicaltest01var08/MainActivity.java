@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        riddle = findViewById(R.id.Riddle);
+        answer = findViewById(R.id.Answer);
+        play = findViewById(R.id.Play);
+        play.setOnClickListener(listener);
     }
 
     private CallImageButtonClickListener listener = new CallImageButtonClickListener();
@@ -34,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             Intent myIntent = new Intent(MainActivity.this, PlayActivity.class);
             myIntent.putExtra("riddle", riddle.getText()); //Optional parameters
             myIntent.putExtra("answer", answer.getText()); //Optional parameters
-            MainActivity.this.startActivity(myIntent);
+            startActivity(myIntent);
         }
     }
 
@@ -51,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        riddle = findViewById(R.id.Riddle);
-        answer = findViewById(R.id.Answer);
-        play = findViewById(R.id.Play);
-        play.setOnClickListener(listener);
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
